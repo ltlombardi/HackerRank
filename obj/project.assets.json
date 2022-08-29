@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Leo\\source\\repos\\github\\HackerRank\\HackerRank.csproj",
+      "projectUniqueName": "C:\\Users\\Leo\\source\\repos\\Github\\HackerRank\\HackerRank.csproj",
       "projectName": "HackerRank",
-      "projectPath": "C:\\Users\\Leo\\source\\repos\\github\\HackerRank\\HackerRank.csproj",
+      "projectPath": "C:\\Users\\Leo\\source\\repos\\Github\\HackerRank\\HackerRank.csproj",
       "packagesPath": "C:\\Users\\Leo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Leo\\source\\repos\\github\\HackerRank\\obj\\",
+      "outputPath": "C:\\Users\\Leo\\source\\repos\\Github\\HackerRank\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Leo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -60,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }
