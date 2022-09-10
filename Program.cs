@@ -1,47 +1,50 @@
 ﻿// This is one example of a exercise from Hackerhank, working in vscode
 class Result
 {
-
-    /*
-     * Complete the 'designerPdfViewer' function below.
-     *
-     * The function is expected to return an INTEGER.
-     * The function accepts following parameters:
-     *  1. INTEGER_ARRAY h
-     *  2. STRING word
-     */
-
-    public static int designerPdfViewer(List<int> h, string word)
+    public static int beautifulDays(int i, int j, int k)
     {
-        var max = 0;
-        foreach (var letter in word)
+        var count = 0;
+        for (; i <= j; i++)
         {
-            var index = letter - 'a';
-            if (max < h[index])
+            if (IsBeautiful(i, k))
             {
-                max = h[index];
+                count++;
             }
         }
-        return max;
+        return count;
     }
 
+    private static bool IsBeautiful(int i, int k)
+    {
+        return (i - invert(i)) % k == 0;
+    }
+
+    private static int invert(int i)
+    {
+        return Convert.ToInt32(new string(i.ToString().Reverse().ToArray()));
+    }
 }
 
 class Solution
 {
     public static void Main(string[] args)
     {
-        TextWriter textWriter = new StreamWriter(Console.OpenStandardOutput());
+        var input = "20 23 6";
+        var cleanInput = input.TrimEnd().Split(' ');
+        var intInput = ConvertToIntegers(cleanInput);
+        int result = Result.beautifulDays(intInput[0], intInput[1], intInput[2]);
+        Console.WriteLine($"result {result}");
+    }
 
-        List<int> h = Console.ReadLine().TrimEnd().Split(' ').ToList().Select(hTemp => Convert.ToInt32(hTemp)).ToList();
-
-        string word = Console.ReadLine();
-
-        int result = Result.designerPdfViewer(h, word);
-
-        textWriter.WriteLine(result);
-
-        textWriter.Flush();
-        textWriter.Close();
+    private static int[] ConvertToIntegers(string[] cleanInput)
+    {
+        try
+        {
+            return cleanInput.Select(i => Convert.ToInt32(i)).ToArray();
+        }
+        catch (System.Exception)
+        {
+            return new int[0];
+        }
     }
 }
