@@ -11,7 +11,7 @@ class Result
                 count++;
             }
         }
-        return count;
+        return count; ;
     }
 
     private static bool IsBeautiful(int i, int k)
