@@ -1,28 +1,50 @@
 ﻿// This is one example of a exercise from Hackerhank, working in vscode
 class Result
 {
-    public static int beautifulDays(int i, int j, int k)
+    public static string appendAndDelete(string s, string t, int k)
     {
-        var count = 0;
-        for (; i <= j; i++)
+        var requiredOperations = 0;
+        requiredOperations += Math.Abs(t.Length - s.Length);
+        var min = Math.Min(t.Length, s.Length);
+        for (int i = 0; i < min && requiredOperations <= k; i++)
         {
-            if (IsBeautiful(i, k))
+            if (t[i] != s[i])
             {
-                count++;
+                requiredOperations+= (t.Length - i)*2;
+                break;
             }
         }
-        return count; ;
+
+        int excessOperations = k - requiredOperations;
+        if (excessOperations >0 && excessOperations % 2 == 0)
+        {
+            requiredOperations+= excessOperations;
+        }
+        return requiredOperations == k ? "Yes" : "No";
     }
 
-    private static bool IsBeautiful(int i, int k)
+    public static string appendAndDelete2(string s, string t, int k)
     {
-        return (i - invert(i)) % k == 0;
+        var requiredOperations = 0;
+        requiredOperations += Math.Abs(t.Length - s.Length);
+        var min = Math.Min(t.Length, s.Length);
+        for (int i = 0; i < min && requiredOperations <= k; i++)
+        {
+            if (t[i] != s[i])
+            {
+                requiredOperations += (t.Length - i) * 2;
+                break;
+            }
+        }
+
+        int excessOperations = k - requiredOperations;
+        if (excessOperations > 0 && excessOperations % 2 == 0)
+        {
+            requiredOperations += excessOperations;
+        }
+        return requiredOperations == k ? "Yes" : "No";
     }
 
-    private static int invert(int i)
-    {
-        return Convert.ToInt32(new string(i.ToString().Reverse().ToArray()));
-    }
 }
 
 class Solution
