@@ -10,28 +10,6 @@ class Result
         {
             if (t[i] != s[i])
             {
-                requiredOperations+= (t.Length - i)*2;
-                break;
-            }
-        }
-
-        int excessOperations = k - requiredOperations;
-        if (excessOperations >0 && excessOperations % 2 == 0)
-        {
-            requiredOperations+= excessOperations;
-        }
-        return requiredOperations == k ? "Yes" : "No";
-    }
-
-    public static string appendAndDelete2(string s, string t, int k)
-    {
-        var requiredOperations = 0;
-        requiredOperations += Math.Abs(t.Length - s.Length);
-        var min = Math.Min(t.Length, s.Length);
-        for (int i = 0; i < min && requiredOperations <= k; i++)
-        {
-            if (t[i] != s[i])
-            {
                 requiredOperations += (t.Length - i) * 2;
                 break;
             }
@@ -43,6 +21,26 @@ class Result
             requiredOperations += excessOperations;
         }
         return requiredOperations == k ? "Yes" : "No";
+    }
+
+    public static string appendAndDelete2(string s, string t, int k)
+    {
+        var requiredOperations = 0;
+        if (s.Length > t.Length)
+        {
+            requiredOperations += s.Length - t.Length;
+        }
+        for (int i = 0; i < t.Length; i++)
+        {
+            if (t[i] != s[i])
+            {
+                requiredOperations += (t.Length - i) * 2;
+                break;
+            }
+        }
+
+
+
     }
 
 }
