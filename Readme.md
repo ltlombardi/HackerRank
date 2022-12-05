@@ -1,3 +1,5 @@
+My solutions to some of https://www.hackerrank.com/ exercises
+
 Implementation decisions:
 - save only the resolution. Each exercise has it's own Main method and only one can exist in a project
 - also there isn't any intention of actually running locally the exercise. It's just no practical.
