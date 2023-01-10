@@ -1,7 +1,7 @@
-namespace saveThePrisoner;
+namespace HackerRank.Prepare.Algorithms.Implementation;
 //https://www.hackerrank.com/challenges/save-the-prisoner/problem
 
-class Result
+class SaveThePrisoner
 {
     public static int saveThePrisoner(int n, int m, int s)
     {

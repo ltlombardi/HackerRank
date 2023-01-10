@@ -1,7 +1,7 @@
-namespace gridSearch;
+namespace HackerRank.Prepare.Algorithms.Implementatio;
 //https://www.hackerrank.com/challenges/the-grid-search/problem
 
-static class Result
+static class GridSearch
 {
     public static string gridSearch(List<string> grid, List<string> pattern)
     {
